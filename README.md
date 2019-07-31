@@ -1,10 +1,10 @@
 # About [repository-name]
 
-[![Build Status](https://travis-ci.org/Ultimate-Hosts-Blacklist/repository-structure.svg?branch=master)](https://travis-ci.org/Ultimate-Hosts-Blacklist/repository-structure)
+[![Build Status](https://travis-ci.org/[repository-slug].svg?branch=master)](https://travis-ci.org/[repository-slug])
 
 
 ```
-[Description]
+[description]
 ```
 
 --------------------------------------------------------------------------------
