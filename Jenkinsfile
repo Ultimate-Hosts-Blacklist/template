@@ -57,6 +57,10 @@ pipeline {
             ultimate-hosts-blacklist-test-launcher --version
             echo "Got launcher version!"
 
+            echo "Let's launch the launcher ..."
+            ultimate-hosts-blacklist-test-launcher
+            echo "Launcher done!"
+
             echo "Deactivation of the conda environment ..."
             conda deactivate
             echo "Conda environment deactivated!"
