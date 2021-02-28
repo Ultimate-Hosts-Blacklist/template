@@ -16,6 +16,9 @@ pipeline {
       stage('Setup miniconda') {
         steps {
           sh script: '''#!/usr/bin/env bash
+
+          set -e
+
           source ${UHB_CONDA_DIR}/etc/profile.d/conda.sh
           conda create --yes -n ${BUILD_TAG} python=3.9 pip
           ''', label: 'Setup Conda environment'
@@ -25,16 +28,38 @@ pipeline {
       stage('Run') {
           steps {
             sh script: '''#!/usr/bin/env bash
+
+            set -e
+
             source ${UHB_CONDA_DIR}/etc/profile.d/conda.sh
 
+            echo "Activation of the conda environment ..."
             conda activate ${BUILD_TAG}
-            python -V
-            pip --version
-            pip install ultimate-hosts-blacklist-test-launcher
-            PyFunceble --version
-            ultimate-hosts-blacklist-test-launcher --version
+            echo "Conda environment activated!"
 
+            echo "Let's get the Python version ..."
+            python -V
+            echo "Got Python version!"
+
+            echo "Let's get the pip version ..."
+            pip --version
+            echo "Got pip version!"
+
+            echo "Let's install the launcher ..."
+            pip install --upgrade ultimate-hosts-blacklist-test-launcher
+            echo "Installed launcher!"
+
+            echo "Let's get the PyFunceble version ..."
+            PyFunceble --version
+            echo "Got PyFunceble version!"
+
+            echo "Let's get the launcher version ..."
+            ultimate-hosts-blacklist-test-launcher --version
+            echo "Got launcher version!"
+
+            echo "Deactivation of the conda environment ..."
             conda deactivate
+            echo "Conda environment deactivated!"
             '''
           }
       }
