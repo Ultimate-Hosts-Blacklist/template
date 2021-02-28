@@ -16,6 +16,7 @@ pipeline {
       stage('Setup miniconda') {
         steps {
           sh script: '''#!/usr/bin/env bash
+          source ${UHB_CONDA_DIR}/etc/profile.d/conda.sh
           conda create --yes -n ${BUILD_TAG} python=3.9 pip
           ''', label: 'Setup Conda environment'
         }
