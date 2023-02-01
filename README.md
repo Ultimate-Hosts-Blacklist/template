@@ -69,7 +69,7 @@ HTTP status code.
 
 Please find more information about it there:
 
-- http://pyfunceble.github.io
-- http://pyfunceble.readthedocs.io
+- https://pyfunceble.github.io
+- https://pyfunceble.readthedocs.io
 - https://github.com/funilrys/PyFunceble
 
